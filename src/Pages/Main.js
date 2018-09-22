@@ -11,6 +11,7 @@ import ProfileHistory from '../Components/Profile/profilehistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
+import Admin from './Admin';
 class Main extends Component {
 
   constructor(props) {
@@ -156,6 +157,12 @@ class Main extends Component {
         {this.state.currentPage === 'Rewards' &&
           <div>
             <Rewards />
+          </div>
+        }
+
+        { this.state.currentPage === 'Admin' &&
+          <div>
+            <Admin />
           </div>
         }
       

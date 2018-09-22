@@ -17,6 +17,7 @@ export default class User {
     this.age = age;
     this.location = location;
     this.donations = [];
+    this.admin = false;
 
   }
 }
