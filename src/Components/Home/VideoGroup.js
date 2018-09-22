@@ -13,12 +13,12 @@ class VideoGroup extends Component {
     var videoCards = [];
     props.videos.forEach((video) => {
       videoCards.push(
-        <YoutubePlayer videoId='video' />
+        <YoutubePlayer videoId={video} />
       )
     })
 
     this.state = {
-      videoCards: []
+      videoCards: videoCards
     }
   }
 

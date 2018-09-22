@@ -15,25 +15,25 @@ class RewardsAd extends Component {
       <div>
         <Card raised onClick={() => {this.props.goToPage('Rewards')}}>
           <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
+            <Image centered src='./goodwillGiftcard.png' size='small' />
             <Card.Description textAlign='center'>
-              This is the Description
+              Goodwill Giftcard
             </Card.Description>
           </Card.Content>
         </Card>
         <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
           <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
+            <Image centered src='./chaseGiftcard.png' size='small' />
             <Card.Description textAlign='center'>
-              This is the Description
+              Chase Visa Giftcard
             </Card.Description>
           </Card.Content>
         </Card>
         <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
           <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
+            <Image centered src='./paypalGiftcard.jpg' size='small' />
             <Card.Description textAlign='center'>
-              This is the Description
+              Paypal Giftcard
             </Card.Description>
           </Card.Content>
         </Card>

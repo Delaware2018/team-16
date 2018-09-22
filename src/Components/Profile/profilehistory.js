@@ -31,14 +31,30 @@ class ProfileHistory extends Component {
     temp.date = dd + '/' + mm + '/' + yyyy;
     temp.name = 'Baseball Bat';
     temp.amount = '$10'
+    history.push(temp);
     // End here
+    temp.date = '04/19/2018';
+    temp.name = 'Lamp';
+    temp.amount = '$15'
+
+    temp.date = '07/04/2017';
+    temp.name = 'Soccer Ball';
+    temp.amount = '$5'
+
+    temp.date = '01/30/2015';
+    temp.name = 'Mens T-Shirt';
+    temp.amount = '$8'
+
+    temp.date = '11/25/2012';
+    temp.name = 'Jump Rope';
+    temp.amount = '$3'
 
     var history = []
     history.push(temp);
 
-    history.forEach((donation) => {
+    history.forEach((donation, index) => {
       donationHistory.push(
-        <Table.Row>
+        <Table.Row key={index}>
           <Table.Cell>
             {temp.date}
           </Table.Cell>

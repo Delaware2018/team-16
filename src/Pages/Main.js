@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginCard from '../Components/Login/LoginCard';
-import { Modal, Button, Transition } from 'semantic-ui-react';
+import { Modal, Button, Transition, Menu } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
@@ -33,7 +33,8 @@ class Main extends Component {
     this.state = {
       loggedIn: false,
       currentPage: 'Home',
-      videos: videos
+      videos: videos,
+      currentProf: 'Info'
     }
   }
 
@@ -82,22 +83,26 @@ class Main extends Component {
 
         {this.state.currentPage === 'Home' &&
           <div>
+            <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
           </div>
         }
 
-        {this.state.currentPage === 'Donation' &&
-          <div>
-
-          </div>
-        }
-
         {this.state.currentPage === 'Profile' &&
           <div>
-            <Profile globalState={this.props.globalState} />
-            <ProfileHistory />
+            <Menu>
+              <Menu.Item onClick={() => {this.setState({currentProf: 'Info'})}}>Info</Menu.Item>
+              <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>History</Menu.Item>
+            </Menu>
+            { this.state.currentProf === 'Info' &&
+              <Profile globalState={this.props.globalState} />
+            }
+            { this.state.currentProf === 'History' &&
+              <ProfileHistory />
+            }
+            
           </div>
         }
 
