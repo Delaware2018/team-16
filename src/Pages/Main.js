@@ -154,7 +154,7 @@ class Main extends Component {
 
         {this.state.currentPage === 'Home' &&
           <div>
-            <Header style={titleStyle} as='h1' size='huge'>Goodwill Dashboard</Header>
+           <Image src='./header_logo.png' style={{left:'60px', bottom:'30px'}}/>
             <Accordion>
               <Accordion.Title onClick={() => { this.setState({ openMission: !this.state.openMission })}}>
                 <h1>Do you know our Mission Statement?</h1>
@@ -173,7 +173,7 @@ class Main extends Component {
               but still usable items.</h3>
               </Accordion.Content>
             </Accordion>
-            <Image src='./HomePicture1.jpg' size='massive' floated = 'left' />
+            <Image src='./HomePicture1.jpg' size='massive' floated = 'left' border='1px solid black'/>
            <RewardsAd goToPage={this.goToPage} />
             <h4>Community Stories</h4>
             <VideoGroup videos={this.state.videos} />
