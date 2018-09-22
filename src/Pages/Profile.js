@@ -143,7 +143,6 @@ class Profile extends Component {
             </tr>   
           </table>
           <Button onClick={this.save} color='green'>Save</Button>
-          <Button onClick={this.makeAdmin}>Make Current User Admin</Button>
           </div>
       </div>
     )
