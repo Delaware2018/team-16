@@ -105,7 +105,17 @@ class Main extends Component {
         {this.state.currentPage === 'Home' &&
           <div>
             <h1>Goodwill Dashboard</h1>
-            <h1>Mission Statement Goes here with Better Formating</h1>
+            <h1>DONATE. SHOP. CREATE JOBS.
+              When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from 
+              these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop, 
+              and Goodwill provides job training programs and employment placement services to people with disabilities, those 
+              who lack education or job experience, and others facing challenges to finding employment. Goodwill provides a hand up,
+              not a hand out to thousands of local residents every year. Ninety cents of every dollar raised by Goodwill goes to 
+              support our mission of service to the community.
+              <br />
+              Your donations and shopping makes a positive impact on the environment too.  
+              This practice offers the community an environmentally healthy alternative for the disposal of unwanted, 
+              but still usable items.</h1>
             <DonationMeter globalState={this.props.globalState} />
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
