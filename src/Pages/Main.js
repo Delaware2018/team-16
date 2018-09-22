@@ -60,6 +60,9 @@ class Main extends Component {
           </div>
         }
 
+        <div ref={(div) => { this.vizContainer = div }}>
+        </div>  
+
         <NavBar loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
 
       </div>
