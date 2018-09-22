@@ -46,7 +46,7 @@ class NavBar extends Component {
                 
 
             {this.props.globalState.user.admin &&
-             <Menu.Item as='a'>
+             <Menu.Item onClick={() => { this.props.goToPage('Admin')}} as='a'>
              <Icon name='desktop' />
               Admin
             </Menu.Item>
