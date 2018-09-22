@@ -12,6 +12,13 @@ class RewardsAd extends Component {
 
   render() {
     return (
+
+      <div>
+      <div>
+        <t>
+          Go to the rewards tab to learn more about our incentives program and to have a chance to earn one of these prizes
+        </t>
+      </div>
       <div>
         <Card.Group>
           <Card raised onClick={() => {this.props.goToPage('Rewards')}}>
@@ -39,6 +46,7 @@ class RewardsAd extends Component {
             </Card.Content>
           </Card>
         </Card.Group>
+      </div>
       </div>
     )
   }
