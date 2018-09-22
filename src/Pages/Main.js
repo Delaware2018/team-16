@@ -4,6 +4,7 @@ import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
+import VideoGroup from '../Components/Home/VideoGroup';
 class Main extends Component {
 
   constructor(props) {
@@ -22,9 +23,13 @@ class Main extends Component {
       }
     })
 
+    // Instantiate Videos here
+    var videos = [];
+
     this.state = {
       loggedIn: false,
-      currentPage: 'Home'
+      currentPage: 'Home',
+      videos: videos
     }
   }
 
@@ -73,13 +78,15 @@ class Main extends Component {
 
         { this.state.currentPage === 'Home' &&
           <div>
-            <RewardsAd />
+            <h1>Mission Statement Goes here with Better Formating</h1>
+            <RewardsAd goToPage={this.goToPage} />
+            <VideoGroup videos={this.state.videos} />
           </div>
         }
 
         { this.state.currentPage === 'Donation' &&
           <div>
-
+            
           </div>
         }
 

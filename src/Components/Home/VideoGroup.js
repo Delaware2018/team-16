@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar, Card } from 'semantic-ui-react'
 
-class RewardsAd extends Component {
+class VideoGroup extends Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +13,7 @@ class RewardsAd extends Component {
   render() {
     return (
       <div>
-        <Card raised onClick={() => {this.props.goToPage('Rewards')}}>
+        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
           <Card.Content centered>
             <Image centered src='./goodwillLogo.png' size='small' />
             <Card.Description textAlign='center'>
@@ -21,7 +21,7 @@ class RewardsAd extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
+        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
           <Card.Content centered>
             <Image centered src='./goodwillLogo.png' size='small' />
             <Card.Description textAlign='center'>
@@ -29,7 +29,7 @@ class RewardsAd extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
+        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
           <Card.Content centered>
             <Image centered src='./goodwillLogo.png' size='small' />
             <Card.Description textAlign='center'>
@@ -42,4 +42,4 @@ class RewardsAd extends Component {
   }
 }
 
-export default RewardsAd;
+export default VideoGroup;
