@@ -29,7 +29,7 @@ class NavBar extends Component {
                     onHide={this.handleSidebarHide}
                     vertical
                     visible={this.props.showMenu}
-                     width='very thin'
+                     width='thin'
                 >
                 <Menu.Item onClick={() => {this.props.goToPage('Home')}} as='a'>
                     <Icon name='home' />
