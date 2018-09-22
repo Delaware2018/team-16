@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 // Firebase / Database Tools
 import * as firebase from 'firebase';
 

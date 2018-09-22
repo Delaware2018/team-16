@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
+import Profile from '../Pages/Profile'
 class Main extends Component {
 
   constructor(props) {
@@ -101,6 +102,8 @@ class Main extends Component {
 
           </div>
         }
+
+        <Profile globalState={this.props.globalState}/>
 
       </div>
     )
