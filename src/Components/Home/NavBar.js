@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import LoginCard from '../Components/Login/LoginCard';
-import { Modal, Button, Transition } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
-import GlobalProvider, { GlobalConsumer } from '../APIs/Global.context';
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
-class Home extends Component {
+class NavBar extends Component {
+    constructor(props){
+      super(props);
 
-    state = { visible: false }
-    handleButtonClick = () => this.setState({ visible: !this.state.visible })
-    handleSidebarHide = () => this.setState({ visible: false })
+      // Add constructor
+    }
 
     render() {
+      return(
+
         <div>
-           <Button onClick={this.handleButtonClick}>Toggle visibility</Button>
              <div>
                 <Sidebar
                     as={Menu}
@@ -22,7 +22,7 @@ class Home extends Component {
                     inverted
                     onHide={this.handleSidebarHide}
                     vertical
-                    visible={visible}
+                    visible={this.props.loggedIn}
                      width='thin'
                 >
                 <Menu.Item as='a'>
@@ -37,17 +37,24 @@ class Home extends Component {
                         <Icon name='book' />
                          History
                     </Menu.Item>
+                
 
-            {this.globalState.admin &&
+            {this.props.globalState.admin &&
              <Menu.Item as='a'>
              <Icon name='desktop' />
               Admin
             </Menu.Item>
             }
+                <Menu.Item as='a'>
+                    <Icon name='sign-out' />
+                    Logout
+                </Menu.Item>
 
            </Sidebar>
          </div>
         </div>
+      )
     }
-
 }
+
+export default NavBar;
