@@ -17,7 +17,7 @@ class Rewards extends Component {
           <Card raised onClick={() => { }}>
             <Card.Content centered>
               <Image centered src='./goodwillGiftcard.png' size='medium' />
-              <Card.Description textAlign='center'>
+              <Card.Description textAlign='center' style = {{marginTop: '5px'}}>
                 Goodwill Giftcard
               </Card.Description>
             </Card.Content>
@@ -25,7 +25,7 @@ class Rewards extends Component {
           <Card raised onClick={() => { }}>
             <Card.Content centered>
               <Image centered src='./visaGiftcard.jpg' size='medium' />
-              <Card.Description textAlign='center'>
+              <Card.Description textAlign='center' style = {{marginTop: '5px'}}>
                 Visa Giftcard
               </Card.Description>
             </Card.Content>
@@ -33,7 +33,7 @@ class Rewards extends Component {
           <Card raised onClick={() => { }}>
             <Card.Content centered>
               <Image centered src='./paypalGiftcard.jpg' size='medium' />
-              <Card.Description textAlign='center'>
+              <Card.Description textAlign='center' style = {{marginTop: '5px'}}>
                 Paypal Giftcard
               </Card.Description>
             </Card.Content>
@@ -49,7 +49,7 @@ class Rewards extends Component {
           <Card raised onClick={() => { }}>
             <Card.Content centered>
               <Image centered src='./ebayGiftcard.jpg' size='medium' />
-              <Card.Description textAlign='center'>
+              <Card.Description textAlign='center' style = {{marginTop: '5px'}}>
                 Ebay Giftcard
               </Card.Description>
             </Card.Content>
@@ -57,7 +57,7 @@ class Rewards extends Component {
           <Card raised onClick={() => { }}>
             <Card.Content centered>
               <Image centered src='./walmartGiftcard.jpg' size='medium' />
-              <Card.Description textAlign='center'>
+              <Card.Description textAlign='center' style = {{marginTop: '5px'}}>
                 Walmart Giftcard
               </Card.Description>
             </Card.Content>
