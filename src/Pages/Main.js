@@ -24,7 +24,7 @@ class Main extends Component {
 
     this.state = {
       loggedIn: false,
-      showMenu: false
+      currentPage: 'Home'
     }
   }
 
@@ -35,6 +35,12 @@ class Main extends Component {
 
     this.setState({
       loggedIn: false
+    })
+  }
+
+  goToPage = (page) => {
+    this.setState({
+      currentPage: page
     })
   }
 
@@ -62,11 +68,32 @@ class Main extends Component {
           </div>
         }
 
-        <Button onClick={() => {this.setState({showMenu: !this.state.showMenu})}}>Toggle Menu</Button>
+        <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
+        <NavBar goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
-        <RewardsAd />
-        
-        <NavBar showMenu={this.state.showMenu} globalState={this.props.globalState} />
+        { this.state.currentPage === 'Home' &&
+          <div>
+            <RewardsAd />
+          </div>
+        }
+
+        { this.state.currentPage === 'Donation' &&
+          <div>
+
+          </div>
+        }
+
+        { this.state.currentPage === 'Profile' &&
+          <div>
+
+          </div>
+        }
+
+        { this.state.currentPage === 'Rewards' &&
+          <div>
+
+          </div>
+        }
 
       </div>
     )

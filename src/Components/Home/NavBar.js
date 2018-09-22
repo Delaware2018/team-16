@@ -25,18 +25,18 @@ class NavBar extends Component {
                     visible={this.props.showMenu}
                      width='very thin'
                 >
-                <Menu.Item as='a'>
+                <Menu.Item onClick={this.props.goToPage('Home')} as='a'>
                     <Icon name='home' />
                     Home
                  </Menu.Item>
-                <Menu.Item as='a'>
+                <Menu.Item onClick={this.props.goToPage('Home')} as='a'>
                  <Icon name='info circle' />
                      Info
                 </Menu.Item>
-                    <Menu.Item as='a'>
-                        <Icon name='book' />
-                         History
-                    </Menu.Item>
+                <Menu.Item onClick={this.props.goToPage('Home')} as='a'>
+                    <Icon name='book' />
+                        History
+                </Menu.Item>
                 
 
             {this.props.globalState.admin &&
