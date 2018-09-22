@@ -29,13 +29,17 @@ class NavBar extends Component {
                     <Icon name='home' />
                     Home
                  </Menu.Item>
-                <Menu.Item onClick={() => {this.props.goToPage('Info')}} as='a'>
+                <Menu.Item onClick={() => {this.props.goToPage('Profile')}} as='a'>
                  <Icon name='info circle' />
-                     Info
+                     Profile
                 </Menu.Item>
-                <Menu.Item onClick={() => {this.props.goToPage('History')}} as='a'>
+                <Menu.Item onClick={() => {this.props.goToPage('Donations')}} as='a'>
                     <Icon name='book' />
-                        History
+                        Donations
+                </Menu.Item>
+                <Menu.Item onClick={() => { this.props.goToPage('Rewards') }} as='a'>
+                    <Icon name='book' />
+                    Rewards
                 </Menu.Item>
                 
 
@@ -45,10 +49,10 @@ class NavBar extends Component {
               Admin
             </Menu.Item>
             }
-                <Menu.Item as='a'>
-                    <Icon name='sign-out' />
-                    Logout
-                </Menu.Item>
+            <Menu.Item onClick={() => {this.props.logout()}} as='a'>
+                <Icon name='sign-out' />
+                Logout
+            </Menu.Item>
 
            </Sidebar>
          </div>

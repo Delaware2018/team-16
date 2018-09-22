@@ -5,7 +5,8 @@ import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
-import Profile from '../Pages/Profile'
+import Profile from '../Pages/Profile';
+import Rewards from '../Pages/Rewards';
 class Main extends Component {
 
   constructor(props) {
@@ -25,7 +26,7 @@ class Main extends Component {
     })
 
     // Instantiate Videos here
-    var videos = [];
+    var videos = ["_XR-mlcQZMU", "ldETe_9FfVA", ""];
 
     this.state = {
       loggedIn: false,
@@ -75,7 +76,7 @@ class Main extends Component {
         }
 
         <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
-        <NavBar goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
+        <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
         { this.state.currentPage === 'Home' &&
           <div>
@@ -99,7 +100,7 @@ class Main extends Component {
 
         { this.state.currentPage === 'Rewards' &&
           <div>
-
+            <Rewards />
           </div>
         }
 
