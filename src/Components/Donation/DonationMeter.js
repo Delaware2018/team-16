@@ -16,7 +16,7 @@ class DonationMeter extends Component {
   donate = (e) => {
     var user = this.props.globalState.user;
 
-    var donation = new Donation(this.props.globalState.username, this.state.donation);
+    var donation = new Donation('Online Donation', this.state.donation);
     user.donations.push(donation);
 
     var userJSON = JSON.stringify(user);
@@ -26,6 +26,10 @@ class DonationMeter extends Component {
 
     storageRef.put(userBlob).then((snapshot) => {
       console.log("Uploaded User with donation");
+    })
+
+    this.props.setGlobal({
+      user
     })
 
   }
