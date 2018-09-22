@@ -154,13 +154,13 @@ class Main extends Component {
 
         {this.state.currentPage === 'Home' &&
           <div>
-           <Image src='./header_logo.png' style={{left:'60px', bottom:'30px'}}/>
+           <Image src='./header_logo.png' style={{left:'47%', bottom:'30px'}}/>
             <Accordion>
               <Accordion.Title onClick={() => { this.setState({ openMission: !this.state.openMission })}}>
                 <h1>Do you know our Mission Statement?</h1>
               </Accordion.Title>
               <Accordion.Content active={this.state.openMission}>
-              <h3>
+              <p>
             DONATE. SHOP. CREATE JOBS. When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from
             these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop,
             and Goodwill provides job training programs and employment placement services to people with disabilities, those
@@ -170,7 +170,7 @@ class Main extends Component {
               <br />
               Your donations and shopping makes a positive impact on the environment too.  
               This practice offers the community an environmentally healthy alternative for the disposal of unwanted, 
-              but still usable items.</h3>
+              but still usable items.</p>
               </Accordion.Content>
             </Accordion>
             <Image src='./HomePicture1.jpg' size='massive' floated = 'left' border='1px solid black'/>
