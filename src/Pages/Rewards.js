@@ -13,6 +13,7 @@ class Rewards extends Component {
   render() {
     return (
       <div>
+      <div>
         <Card.Group>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
@@ -64,6 +65,13 @@ class Rewards extends Component {
           </Card>
         </Card.Group>
       </div>
+      <div class="ui progress">
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="label">Rewards Progress</div>
+    </div>
+    </div>
     )
   }
 }
