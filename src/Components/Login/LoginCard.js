@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Card, Icon, Button, Image, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
+import User from '../../Data/User';
 
 class LoginCard extends Component {
 
@@ -49,9 +50,18 @@ class LoginCard extends Component {
           console.log("Do something here if the email is taken")
         }
       })
-
+      var user = new User();
       var username = this.state.email;
       username = username.replace(/[$#\[\]]/, '').replace('.', '-').replace('@', '-');
+
+      var userJSON = JSON.stringify(user);
+
+      var storageRef = firebase.storage().ref().child(username + '.json');
+      var userBlob = new Blob([userJSON], { type: 'application/json' });
+
+      storageRef.put(userBlob).then((snapshot) => {
+          console.log("Added User to Database");
+      })
 
       this.props.setGlobal({
         username: username

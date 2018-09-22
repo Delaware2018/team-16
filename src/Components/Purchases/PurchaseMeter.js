@@ -16,7 +16,7 @@ class PurchaseMeter extends Component {
   donate = (e) => {
     var user = this.props.globalState.user;
 
-    var purchase = new Purchase('Online Donation', this.state.donation);
+    var purchase = new Purchase('Online Purchase', this.state.purchase);
     user.purchases.push(purchase);
 
     var userJSON = JSON.stringify(user);
@@ -25,7 +25,7 @@ class PurchaseMeter extends Component {
     var userBlob = new Blob([userJSON], {type: 'application/json'});
 
     storageRef.put(userBlob).then((snapshot) => {
-      console.log("Uploaded User with donation");
+      console.log("Uploaded User with purchase");
     })
 
     this.props.setGlobal({

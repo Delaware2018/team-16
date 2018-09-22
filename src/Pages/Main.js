@@ -13,7 +13,6 @@ import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
 import CustomPurchase from '../Components/Purchases/CustomPurchase';
-import PurchaseMeter from '../Components/Purchases/PurchaseMeter';
 import Admin from './Admin';
 import { Advertisement } from 'semantic-ui-react'
 class Main extends Component {
@@ -147,10 +146,7 @@ class Main extends Component {
         </div>}
         <Button onClick={ this.buttonAway } icon='angle double right' id="one" />
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
-
-      <div>
-        <Advertisement unit='banner' test='Enter personal info here to redeem rewards' />
-      </div>
+        
         {this.state.currentPage === 'Home' &&
           <div>
             <h1>Goodwill Dashboard</h1>
@@ -182,7 +178,7 @@ class Main extends Component {
               <Profile globalState={this.props.globalState} setGlobal={this.props.setGlobal}/>
             }
             { this.state.currentProf === 'History' &&
-              <ProfileHistory globalState={this.props.globalState} />
+              <ProfileHistory globalState={this.props.globalState} setGlobal={this.props.setGlobal} />
             }
             { this.state.currentProf === 'Donations' &&
               <DonationsHistory setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
