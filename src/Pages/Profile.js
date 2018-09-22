@@ -68,6 +68,23 @@ class Profile extends Component {
     });
   }
 
+  save = () => {
+    var user = this.props.globalState.user;
+
+    var userJSON = JSON.stringify(user);
+
+    var storageRef = firebase.storage().ref().child(this.props.globalState.username + '.json');
+    var userBlob = new Blob([userJSON], { type: 'application/json' });
+
+    storageRef.put(userBlob).then((snapshot) => {
+      console.log("Uploaded User Information");
+    })
+
+    this.props.setGlobal({
+      user
+    })
+  }
+
   render() {
     return (
       <div>
@@ -106,33 +123,34 @@ class Profile extends Component {
             <table style = {{width: '25%'}}>
             <tr>
               <th>Email:</th>
-                <td><Input placeholder={this.props.globalState.user.email} onChange={this.updateEmailValue}/></td>
+                <td><Input value={this.props.globalState.user.email} onChange={this.updateEmailValue}/></td>
             </tr>
             <tr>
               <th>Family Size:</th>
-              <td><Input placeholder={this.props.globalState.user.familySize} onChange={this.updateFSValue}/></td>
+              <td><Input value={this.props.globalState.user.familySize} onChange={this.updateFSValue}/></td>
             </tr>
             <tr>
               <th>Income:</th>
-              <td><Input placeholder={this.props.globalState.user.income} onChange={this.updateIncomeValue}/></td>
+              <td><Input value={this.props.globalState.user.income} onChange={this.updateIncomeValue}/></td>
             </tr>
             <tr>
               <th>Pets:</th>
-              <td><Input placeholder={this.props.globalState.user.pets} onChange={this.updatePetsValue}/></td>
+              <td><Input value={this.props.globalState.user.pets} onChange={this.updatePetsValue}/></td>
             </tr>
             <tr>
               <th>Gender:</th>
-              <td><Input placeholder={this.props.globalState.user.gender} onChange={this.updateGenderValue}/></td>
+              <td><Input value={this.props.globalState.user.gender} onChange={this.updateGenderValue}/></td>
             </tr>
             <tr>
               <th>Age:</th>
-              <td><Input placeholder={this.props.globalState.user.age} onChange={this.updateAgeValue}/></td>
+              <td><Input value={this.props.globalState.user.age} onChange={this.updateAgeValue}/></td>
             </tr>
             <tr>
               <th>Location:</th>
-              <td><Input placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/></td>
+              <td><Input value={this.props.globalState.user.location} onChange={this.updateLocationValue}/></td>
             </tr>   
           </table>
+          <Button onClick={this.save} color='green'>Save</Button>
           </div>
       </div>
     )
