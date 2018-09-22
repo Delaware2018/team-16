@@ -14,7 +14,6 @@ class Home extends Component {
       return(
 
         <div>
-           <Button onClick={this.handleButtonClick}>Toggle visibility</Button>
              <div>
                 <Sidebar
                     as={Menu}
@@ -38,6 +37,7 @@ class Home extends Component {
                         <Icon name='book' />
                          History
                     </Menu.Item>
+                
 
             {this.props.globalState.admin &&
              <Menu.Item as='a'>
@@ -45,6 +45,10 @@ class Home extends Component {
               Admin
             </Menu.Item>
             }
+                <Menu.Item as='a'>
+                    <Icon name='sign-out' />
+                    Logout
+                </Menu.Item>
 
            </Sidebar>
          </div>

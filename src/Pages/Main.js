@@ -63,7 +63,6 @@ class Main extends Component {
 
         <Home loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
 
-        <Button onClick={this.logout}>Logout</Button>
       </div>
     )
   }
