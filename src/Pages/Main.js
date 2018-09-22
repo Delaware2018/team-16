@@ -25,6 +25,7 @@ class Main extends Component {
 
         storageRef.child(username + '.json').getDownloadURL().then((url) => {
           $.getJSON(url, (data) =>{
+            data.email = user.email;
             this.props.setGlobal({
               user: data
             })
