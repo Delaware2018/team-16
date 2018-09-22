@@ -59,7 +59,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        {this.state.loggedIn &&
+        {!this.state.loggedIn &&
           <div>
             <Transition.Group animation='horizontal flip' duration={500}>
               {!this.props.globalState.creating &&
