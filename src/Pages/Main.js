@@ -4,6 +4,7 @@ import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
+import Profile from '../Pages/Profile'
 class Main extends Component {
 
   constructor(props) {
@@ -67,6 +68,8 @@ class Main extends Component {
         <RewardsAd />
         
         <NavBar showMenu={this.state.showMenu} globalState={this.props.globalState} />
+
+        <Profile globalState={this.props.globalState}/>
 
       </div>
     )

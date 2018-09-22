@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import { Input } from 'semantic-ui-react'
 
 class Profile extends Component {
   constructor(props) {
     super(props);
-    this.user = this.props.globalState.user;
     // Add constructor
   }
+
 
   updateEmailValue (evt) {
     var user = this.props.globalState.user;
