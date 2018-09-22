@@ -33,10 +33,6 @@ class NavBar extends Component {
                  <Icon name='info circle' />
                      Profile
                 </Menu.Item>
-                <Menu.Item onClick={() => {this.props.goToPage('Donations')}} as='a'>
-                    <Icon name='book' />
-                        Donations
-                </Menu.Item>
                 <Menu.Item onClick={() => { this.props.goToPage('Rewards') }} as='a'>
                     <Icon name='book' />
                     Rewards
