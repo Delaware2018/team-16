@@ -72,7 +72,7 @@ class Profile extends Component {
     return (
       <div>
 
-          <Image src='./matthew.png' />
+          <Image src='./matthew.png' size='medium' floated = 'left' circular />
         
           {this.props.globalState.user.name}
             <span>
