@@ -17,7 +17,7 @@ class RewardsAd extends Component {
       <div>
         <h4>
           Go to the rewards tab to learn more about our incentives program and to have a chance to 
-                        earn one of these prizes
+          earn one of these rewards
         </h4>
       </div>
       <div>
