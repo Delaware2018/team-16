@@ -16,6 +16,7 @@ export default class User {
     this.gender = gender;
     this.age = age;
     this.location = location;
+    this.donations = [];
 
   }
 }

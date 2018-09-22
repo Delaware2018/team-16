@@ -16,7 +16,7 @@ class RewardsAd extends Component {
         <Card.Group>
           <Card raised onClick={() => {this.props.goToPage('Rewards')}}>
             <Card.Content centered>
-              <Image centered src='./goodwillGiftcard.png' size='small' />
+              <Image centered src='./goodwillGiftcard.png' size='medium' />
               <Card.Description textAlign='center'>
                 Goodwill Giftcard
               </Card.Description>
@@ -24,15 +24,15 @@ class RewardsAd extends Component {
           </Card>
           <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
             <Card.Content centered>
-              <Image centered src='./chaseGiftcard.png' size='small' />
+              <Image centered src='./visaGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
-                Chase Visa Giftcard
+                Visa Giftcard
               </Card.Description>
             </Card.Content>
           </Card>
           <Card raised onClick={() => { this.props.goToPage('Rewards')}}>
             <Card.Content centered>
-              <Image centered src='./paypalGiftcard.jpg' size='small' />
+              <Image centered src='./paypalGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
                 Paypal Giftcard
               </Card.Description>
