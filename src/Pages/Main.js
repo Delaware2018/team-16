@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginCard from '../Components/Login/LoginCard';
-import { Modal, Button, Transition, Menu } from 'semantic-ui-react';
+import { Modal, Button, Transition, Menu, Header, Accordion } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
@@ -14,7 +14,6 @@ import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
 import CustomPurchase from '../Components/Purchases/CustomPurchase';
 import Admin from './Admin';
-import { Advertisement } from 'semantic-ui-react'
 class Main extends Component {
 
   constructor(props) {
@@ -87,7 +86,8 @@ class Main extends Component {
       currentPage: 'Home',
       videos: videos,
       currentProf: 'Info',
-      showMenu: false
+      showMenu: false,
+      openMission: false
     }
   }
 
@@ -118,6 +118,10 @@ class Main extends Component {
   }
 
   render() {
+    const titleStyle = {
+      textAlign: 'center'
+    }
+        
     return (
       <div>
         {!this.state.loggedIn &&
@@ -146,22 +150,27 @@ class Main extends Component {
         </div>}
         <Button onClick={ this.buttonAway } icon='angle double right' id="one" />
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
-        
+
         {this.state.currentPage === 'Home' &&
           <div>
-            <h1>Goodwill Dashboard</h1>
-            <h1>Mission Statement Goes here with Better Formating</h1>
-            <h1>DONATE. SHOP. CREATE JOBS.
-              When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from 
-              these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop, 
-              and Goodwill provides job training programs and employment placement services to people with disabilities, those 
-              who lack education or job experience, and others facing challenges to finding employment. Goodwill provides a hand up,
-              not a hand out to thousands of local residents every year. Ninety cents of every dollar raised by Goodwill goes to 
-              support our mission of service to the community.
+            <Header style={titleStyle} as='h1' size='huge'>Goodwill Dashboard</Header>
+            <Accordion>
+              <Accordion.Title onClick={() => { this.setState({ openMission: !this.state.openMission })}}>
+                <h1>Do you know our Mission Statement?</h1>
+              </Accordion.Title>
+              <Accordion.Content active={this.state.openMission}>
+              <h3>DONATE. SHOP. CREATE JOBS. When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from
+            these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop,
+            and Goodwill provides job training programs and employment placement services to people with disabilities, those
+            who lack education or job experience, and others facing challenges to finding employment. Goodwill provides a hand up,
+            not a hand out to thousands of local residents every year. Ninety cents of every dollar raised by Goodwill goes to
+            support our mission of service to the community.
               <br />
               Your donations and shopping makes a positive impact on the environment too.  
               This practice offers the community an environmentally healthy alternative for the disposal of unwanted, 
-              but still usable items.</h1>
+              but still usable items.</h3>
+              </Accordion.Content>
+            </Accordion>
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
           </div>
