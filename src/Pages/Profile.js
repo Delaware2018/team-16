@@ -90,6 +90,7 @@ class Profile extends Component {
       <div>
 
           <Image src='./matthew.png' size='medium' floated = 'left' circular />
+          <Image src='./qrCode.png' size='medium' floated = 'right' />
         <div>
           {this.props.globalState.user.name}
             {/* <span>
@@ -151,7 +152,6 @@ class Profile extends Component {
             </tr>   
           </table>
           <Button onClick={this.save} color='green'>Save</Button>
-          <Image src='./qrCode.png' size='medium' floated = 'right' />
           </div>
       </div>
     )
