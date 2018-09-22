@@ -29,7 +29,6 @@ export default class GlobalProvider extends Component{
       loggedIn: false,
       creating: false,
       username: '',
-      admin: false,
       user: user
     }
   }

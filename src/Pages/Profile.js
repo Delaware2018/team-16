@@ -85,11 +85,31 @@ class Profile extends Component {
     })
   }
 
+  makeAdmin = () => {
+    var user = this.props.globalState.user;
+
+    user.admin = true;
+
+    var userJSON = JSON.stringify(user);
+
+    var storageRef = firebase.storage().ref().child(this.props.globalState.username + '.json');
+    var userBlob = new Blob([userJSON], { type: 'application/json' });
+
+    storageRef.put(userBlob).then((snapshot) => {
+      console.log("Uploaded User Information");
+    })
+
+    this.props.setGlobal({
+      user
+    })
+  }
+
   render() {
     return (
       <div>
 
           <Image src='./matthew.png' size='medium' floated = 'left' circular />
+          <Image src='./qrCode.png' size='medium' floated = 'right' style = {{marginRight: '560px'}} />
         <div>
           {this.props.globalState.user.name}
             {/* <span>
@@ -151,7 +171,7 @@ class Profile extends Component {
             </tr>   
           </table>
           <Button onClick={this.save} color='green'>Save</Button>
-          <Image src='./qrCode.png' size='medium' floated = 'right' />
+          <Button onClick={this.makeAdmin}>Make Current User Admin</Button>
           </div>
       </div>
     )

@@ -18,6 +18,7 @@ export default class User {
     this.location = location;
     this.donations = [];
     this.purchases = [];
+    this.admin = false;
 
   }
 }

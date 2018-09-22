@@ -13,6 +13,7 @@ import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
 import CustomPurchase from '../Components/Purchases/CustomPurchase';
 import PurchaseMeter from '../Components/Purchases/PurchaseMeter';
+import Admin from './Admin';
 class Main extends Component {
 
   constructor(props) {
@@ -160,6 +161,12 @@ class Main extends Component {
         {this.state.currentPage === 'Rewards' &&
           <div>
             <Rewards />
+          </div>
+        }
+
+        { this.state.currentPage === 'Admin' && this.props.globalState.user.admin &&
+          <div>
+            <Admin />
           </div>
         }
       
