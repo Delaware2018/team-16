@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar, Card, Table, Button } from 'semantic-ui-react'
-import CustomPurchase from '../Purchases/CustomPurchase';
-import PurchaseMeter from '../Purchases/PurchaseMeter';
+import CustomDonation from '../Donation/CustomDonation';
+import DonationMeter from '../Donation/DonationMeter';
 
-class ProfileHistory extends Component {
+class DonationsHistory extends Component {
   constructor(props) {
     super(props);
 
@@ -56,8 +56,8 @@ class ProfileHistory extends Component {
   render() {
     return (
       <div>
-         <PurchaseMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
-            <CustomPurchase setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+         <DonationMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomDonation setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
         <Table celled striped>
           <Table.Header>
             <Table.Row>
@@ -67,12 +67,13 @@ class ProfileHistory extends Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {this.state.purchaseHistory}
+            {this.state.donationHistory}
           </Table.Body>
         </Table>
+
       </div>
     )
   }
 }
 
-export default ProfileHistory;
+export default DonationsHistory;

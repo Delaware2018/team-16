@@ -112,34 +112,6 @@ class Profile extends Component {
           <Image src='./qrCode.png' size='medium' floated = 'right' style = {{marginRight: '560px'}} />
         <div>
           {this.props.globalState.user.name}
-            {/* <span>
-              Email: <Input style={{ marginLeft: '35px',  }} placeholder='@' onChange={this.updateEmailValue}/>
-            </span>
-            <br/>
-             <span>
-              Family Size: <Input placeholder={this.props.globalState.user.familySize} onChange={this.updateFSValue}/>
-            </span>
-            <br/>
-            <span>
-              Income: <Input style={{ marginLeft: '23px',  }} placeholder={this.props.globalState.user.income} onChange={this.updateIncomeValue}/>
-            </span>
-            <br/>
-            <span>
-              Pets: <Input style={{ marginLeft: '41px',  }} placeholder={this.props.globalState.user.pets} onChange={this.updatePetsValue}/>
-            </span>
-            <br/>
-            <span>
-              Gender: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.gender} onChange={this.updateGenderValue}/>
-            </span>
-            <br/>
-            <span>
-              Age: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.age} onChange={this.updateAgeValue}/>
-            </span>
-            <br/>
-            <span>
-              Location: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/>
-            </span>
-            <br/> */}
             <table style = {{width: '25%'}}>
             <tr>
               <th>Email:</th>
