@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import { Header, Input, Image, Menu, Segment, Sidebar, Dropdown } from 'semantic-ui-react'
 import { RadialChart, Hint } from 'react-vis';
+import $ from 'jquery';
 import "react-vis/dist/style.css";
 
 class Admin extends Component {
@@ -20,6 +21,17 @@ class Admin extends Component {
       { text: 'Age', value: 'age' },
       { text: 'Location', value: 'location' }
     ]
+
+    var storageRef = firebase.storage().ref();
+
+    this.props.globalState.adminData.users.forEach((user) => {
+      var username = user.replace(/[$#\[\]]/, '').replace('.', '-').replace('@', '-');
+      storageRef.child(username + '.json').getDownloadURL().then((url) => {
+        $.getJSON(url, (data) => {
+          console.log(data)
+        })
+      })
+    })
 
     this.state = {
       value: false,
