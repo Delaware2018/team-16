@@ -59,7 +59,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        {this.state.loggedIn &&
+        {!this.state.loggedIn &&
           <div>
             <Transition.Group animation='horizontal flip' duration={500}>
               {!this.props.globalState.creating &&
@@ -80,6 +80,9 @@ class Main extends Component {
           </div>
         }
 
+        {this.state.loggedIn && <div>
+          
+        </div>}
         <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
@@ -99,7 +102,7 @@ class Main extends Component {
               <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>History</Menu.Item>
             </Menu>
             { this.state.currentProf === 'Info' &&
-              <Profile globalState={this.props.globalState} />
+              <Profile globalState={this.props.globalState} setGlobal={this.props.setGlobal}/>
             }
             { this.state.currentProf === 'History' &&
               <ProfileHistory />
@@ -113,8 +116,9 @@ class Main extends Component {
             <Rewards />
           </div>
         }
-
+      
       </div>
+      
     )
   }
 }
