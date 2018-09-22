@@ -106,7 +106,7 @@ class Profile extends Component {
             <table style = {{width: '25%'}}>
             <tr>
               <th>Email:</th>
-                <td><Input placeholder={this.props.globalState.user.familySize} onChange={this.updateFSValue}/></td>
+                <td><Input placeholder={this.props.globalState.user.email} onChange={this.updateEmailValue}/></td>
             </tr>
             <tr>
               <th>Family Size:</th>
