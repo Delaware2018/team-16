@@ -6,9 +6,15 @@ import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 class NavBar extends Component {
     constructor(props){
       super(props);
-
       // Add constructor
     }
+
+    handler = () => {
+        var newState = !this.props.showMenu;
+        this.setState({
+          showMenu: newState
+        })
+      }
 
     render() {
       return(

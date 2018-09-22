@@ -35,7 +35,8 @@ class Main extends Component {
       loggedIn: false,
       currentPage: 'Home',
       videos: videos,
-      currentProf: 'Info'
+      currentProf: 'Info',
+      showMenu: false
     }
   }
 
@@ -51,7 +52,8 @@ class Main extends Component {
 
   goToPage = (page) => {
     this.setState({
-      currentPage: page
+      currentPage: page,
+      showMenu: !this.state.showMenu
     })
   }
 
