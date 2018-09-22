@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginCard from '../Components/Login/LoginCard';
-import { Modal, Button, Transition, Menu, Header, Accordion } from 'semantic-ui-react';
+import { Modal, Button, Transition, Menu, Header, Accordion, Image } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
@@ -159,7 +159,8 @@ class Main extends Component {
                 <h1>Do you know our Mission Statement?</h1>
               </Accordion.Title>
               <Accordion.Content active={this.state.openMission}>
-              <h3>DONATE. SHOP. CREATE JOBS. When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from
+              <h3>
+            DONATE. SHOP. CREATE JOBS. When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from
             these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop,
             and Goodwill provides job training programs and employment placement services to people with disabilities, those
             who lack education or job experience, and others facing challenges to finding employment. Goodwill provides a hand up,
@@ -171,7 +172,9 @@ class Main extends Component {
               but still usable items.</h3>
               </Accordion.Content>
             </Accordion>
+            <Image src='./HomePicture1.jpg' size='massive' floated = 'left' />
             <RewardsAd goToPage={this.goToPage} />
+            <h4>Community Stories</h4>
             <VideoGroup videos={this.state.videos} />
           </div>
         }
