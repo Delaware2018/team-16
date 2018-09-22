@@ -3,13 +3,27 @@ import LoginCard from '../Components/Login/LoginCard';
 import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import GlobalProvider, { GlobalConsumer } from '../APIs/Global.context';
-
+import Home from '../Components/Home/Home';
 class Main extends Component {
 
   constructor(props) {
     super(props);
+    
+    // Function to run when login is accepted
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user){
+        this.setState({
+          loggedIn: true
+        })
+      } else {
+        this.setState({
+          loggedIn: false
+        })
+      }
+    })
 
     this.state = {
+      loggedIn: false
     }
   }
 
@@ -18,7 +32,7 @@ class Main extends Component {
       console.log("Signed Out");
     })
 
-    this.props.setGlobal({
+    this.setState({
       loggedIn: false
     })
   }
@@ -26,24 +40,29 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Transition.Group animation='horizontal flip' duration={500}>
-          {!this.props.globalState.creating &&
-            <Modal dimmer='inverted' open={!this.props.globalState.loggedIn}>
-              <LoginCard globalState={this.props.globalState}
-                setGlobal={this.props.setGlobal} />
-            </Modal>
-          }
-        </Transition.Group>
-        <Transition.Group animation='horizontal flip' duration={500}>
-          {this.props.globalState.creating &&
-            <Modal dimmer='inverted' open={!this.props.globalState.loggedIn}>
-              <LoginCard globalState={this.props.globalState}
-                setGlobal={this.props.setGlobal} />
-            </Modal>
-          }
-        </Transition.Group>
+        { !this.state.loggedIn &&
+          <div>
+            <Transition.Group animation='horizontal flip' duration={500}>
+              {!this.props.globalState.creating &&
+                <Modal dimmer='inverted' open={!this.props.globalState.loggedIn}>
+                  <LoginCard globalState={this.props.globalState}
+                    setGlobal={this.props.setGlobal} />
+                </Modal>
+              }
+            </Transition.Group>
+            <Transition.Group animation='horizontal flip' duration={500}>
+              {this.props.globalState.creating &&
+                <Modal dimmer='inverted' open={!this.props.globalState.loggedIn}>
+                  <LoginCard globalState={this.props.globalState}
+                    setGlobal={this.props.setGlobal} />
+                </Modal>
+              }
+            </Transition.Group>
+          </div>
+        }
 
-        <Button onClick={this.logout}>Logout</Button>
+        <Home loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
+
       </div>
     )
   }
