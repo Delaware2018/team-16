@@ -9,6 +9,7 @@ class ProfileHistory extends Component {
     // Add constructor
 
     var donationHistory = []
+    var purchaseHistory = []
 
     // Get Donation History from firebase
 
@@ -27,9 +28,26 @@ class ProfileHistory extends Component {
         </Table.Row>
       )
     })
+    console.log(this.props.globalState.user)
+    this.props.globalState.user.purchases.forEach((purchase, index) => {
+      purchaseHistory.push(
+        <Table.Row key={index}>
+          <Table.Cell>
+            {purchase.date}
+          </Table.Cell>
+          <Table.Cell>
+            {purchase.name}
+          </Table.Cell>
+          <Table.Cell>
+            {purchase.amount}
+          </Table.Cell>
+        </Table.Row>
+      )
+    })
 
     this.state = {
-      donationHistory: donationHistory
+      donationHistory: donationHistory,
+      purchaseHistory: purchaseHistory
     }
   }
 
@@ -48,9 +66,21 @@ class ProfileHistory extends Component {
             {this.state.donationHistory}
           </Table.Body>
         </Table>
+        <Table celled striped>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Date</Table.HeaderCell>
+              <Table.HeaderCell>Item Name</Table.HeaderCell>
+              <Table.HeaderCell>Amount</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {this.state.purchaseHistory}
+          </Table.Body>
+        </Table>
       </div>
     )
   }
 }
 
-export default ProfileHistory
+export default ProfileHistory;
