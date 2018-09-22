@@ -8,13 +8,13 @@ import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
 import ProfileHistory from '../Components/Profile/profilehistory';
-import DonationsHistory from '../Components/Profile/DonationsHistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
 import CustomPurchase from '../Components/Purchases/CustomPurchase';
 import PurchaseMeter from '../Components/Purchases/PurchaseMeter';
 import Admin from './Admin';
+import { Advertisement } from 'semantic-ui-react'
 class Main extends Component {
 
   constructor(props) {
@@ -36,23 +36,6 @@ class Main extends Component {
             })
           })
         });
-
-        storageRef.child('listOfUsers.json').getDownloadURL().then((url) => {
-          $.getJSON(url, (data) => {
-            if(!data.users.includes(user.email)){
-              data.users.push(user.email)
-            }
-
-            var dataJSON = JSON.stringify(data);
-
-            var storageRef = firebase.storage().ref().child('listOfUsers.json');
-            var dataBlob = new Blob([dataJSON], { type: 'application/json' });
-
-            storageRef.put(dataBlob).then((snapshot) => {
-              console.log("Updated User List");
-            })
-          })
-        })
 
         this.props.setGlobal({
           username: username
@@ -109,7 +92,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        {this.state.loggedIn &&
+        {!this.state.loggedIn &&
           <div>
             <Transition.Group animation='horizontal flip' duration={500}>
               {!this.props.globalState.creating &&
@@ -136,10 +119,20 @@ class Main extends Component {
         <Button onClick={ this.buttonAway } icon='angle double right' id="one" />
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
+      <div>
+      <Advertisement unit ='banner' test='Enter personal info here to redeem rewards' />
+    </div>
+)
+
+export default AdvertisementExampleCommonUnits
         {this.state.currentPage === 'Home' &&
           <div>
             <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
+            <DonationMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomDonation setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <PurchaseMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomPurchase setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
             <h1>DONATE. SHOP. CREATE JOBS.
               When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from 
               these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop, 
@@ -160,17 +153,13 @@ class Main extends Component {
           <div>
             <Menu>
               <Menu.Item onClick={() => {this.setState({currentProf: 'Info'})}}>Info</Menu.Item>
-              <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>Purchases</Menu.Item>
-              <Menu.Item onClick={() => { this.setState({ currentProf: 'Donations' }) }}>Donations</Menu.Item>
+              <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>History</Menu.Item>
             </Menu>
             { this.state.currentProf === 'Info' &&
               <Profile globalState={this.props.globalState} setGlobal={this.props.setGlobal}/>
             }
             { this.state.currentProf === 'History' &&
               <ProfileHistory globalState={this.props.globalState} />
-            }
-            { this.state.currentProf === 'Donations' &&
-              <DonationsHistory globalState={this.props.globalState} />
             }
             
           </div>
