@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar, Card, Table, Button } from 'semantic-ui-react'
+import CustomPurchase from '../Purchases/CustomPurchase';
+import PurchaseMeter from '../Purchases/PurchaseMeter';
 
 class ProfileHistory extends Component {
   constructor(props) {
@@ -54,6 +56,8 @@ class ProfileHistory extends Component {
   render() {
     return (
       <div>
+         <PurchaseMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomPurchase setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
         <Table celled striped>
           <Table.Header>
             <Table.Row>

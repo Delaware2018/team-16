@@ -7,7 +7,7 @@ import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
-import ProfileHistory from '../Components/Profile/profilehistory';
+import ProfileHistory from '../Components/Profile/ProfileHistory';
 import DonationsHistory from '../Components/Profile/DonationsHistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
@@ -92,7 +92,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        {!this.state.loggedIn &&
+        {this.state.loggedIn &&
           <div>
             <Transition.Group animation='horizontal flip' duration={500}>
               {!this.props.globalState.creating &&
