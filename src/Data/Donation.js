@@ -16,7 +16,7 @@ export default class User {
       mm = '0' + mm;
     }
 
-    this.date = dd + '/' + mm + '/' + yyyy;
+    this.date = mm + '/' + dd + '/' + yyyy;
 
   }
 }

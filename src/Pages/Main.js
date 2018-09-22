@@ -7,9 +7,10 @@ import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
-import ProfileHistory from '../Components/Profile/ProfileHistory';
+import ProfileHistory from '../Components/Profile/profilehistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
+import CustomDonation from '../Components/Donation/CustomDonation';
 class Main extends Component {
 
   constructor(props) {
@@ -119,6 +120,7 @@ class Main extends Component {
             <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
             <DonationMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomDonation setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
             <h1>DONATE. SHOP. CREATE JOBS.
               When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from 
               these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop, 
