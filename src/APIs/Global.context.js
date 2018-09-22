@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+// Firebase / Database Tools
+import * as firebase from 'firebase';
+
 const GlobalContext = React.createContext();
 
 export default class GlobalProvider extends Component{
@@ -8,8 +11,22 @@ export default class GlobalProvider extends Component{
 
     this.setGlobal = this.setGlobal.bind(this);
 
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBVuaYbSeN3YweBpRtdUaJQpgHlZpqRbWQ",
+      authDomain: "jpmorgancodeforgood16.firebaseapp.com",
+      databaseURL: "https://jpmorgancodeforgood16.firebaseio.com",
+      projectId: "jpmorgancodeforgood16",
+      storageBucket: "jpmorgancodeforgood16.appspot.com",
+      messagingSenderId: "144054862894"
+    };
+    firebase.initializeApp(config);
+
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      creating: false,
+      username: '',
+      admin: false
     }
   }
 
