@@ -7,6 +7,7 @@ import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
+import ProfileHistory from '../Components/Profile/ProfileHistory';
 class Main extends Component {
 
   constructor(props) {
@@ -26,7 +27,8 @@ class Main extends Component {
     })
 
     // Instantiate Videos here
-    var videos = ["_XR-mlcQZMU", "ldETe_9FfVA", ""];
+    var videos = ["_XR-mlcQZMU", "ldETe_9FfVA", "1xjRG1NQwUY", "mF6jzj82OSA", 
+    "d_N2rdlv0qA", "HpbxPFBpDLo", "nvXJZdtIKnY", "Sr6-AFlwcps", "0M5Dr7fb_ac"];
 
     this.state = {
       loggedIn: false,
@@ -95,6 +97,7 @@ class Main extends Component {
         { this.state.currentPage === 'Profile' &&
           <div>
             <Profile globalState={this.props.globalState} />
+            <ProfileHistory />
           </div>
         }
 
