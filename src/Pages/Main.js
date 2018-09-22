@@ -17,6 +17,12 @@ class Main extends Component {
     // Function to run when login is accepted
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        var username = user.email;
+        username = username.replace(/[$#\[\]]/, '').replace('.', '-').replace('@', '-');
+
+        this.props.setGlobal({
+          username: username
+        })
         this.setState({
           loggedIn: true
         })
@@ -81,6 +87,9 @@ class Main extends Component {
           </div>
         }
 
+        {this.state.loggedIn && <div>
+          
+        </div>}
         <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
@@ -88,7 +97,7 @@ class Main extends Component {
           <div>
             <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
-            <DonationMeter />
+            <DonationMeter globalState={this.props.globalState} />
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
           </div>
@@ -101,7 +110,7 @@ class Main extends Component {
               <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>History</Menu.Item>
             </Menu>
             { this.state.currentProf === 'Info' &&
-              <Profile globalState={this.props.globalState} />
+              <Profile globalState={this.props.globalState} setGlobal={this.props.setGlobal}/>
             }
             { this.state.currentProf === 'History' &&
               <ProfileHistory />
@@ -115,8 +124,9 @@ class Main extends Component {
             <Rewards />
           </div>
         }
-
+      
       </div>
+      
     )
   }
 }
