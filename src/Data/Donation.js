@@ -1,4 +1,4 @@
-export default class User {
+export default class Donation {
   constructor(name, amount) {
 
     this.name = name;
