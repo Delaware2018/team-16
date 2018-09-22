@@ -97,11 +97,12 @@ class LoginCard extends Component {
 
         var animation = 'horizontal flip';
 
+
         return (
             <Card raised style={cardStyle}>
                 <Card.Content>
                     <Card.Description textAlign='center'>
-                        <Image centered src='./goodwillLogo.png' size='medium' />
+                        <Image centered src='./goodwillLogo.png' size='small' />
                         <Transition.Group animation={animation} duraiton={500}>
                             {this.props.globalState.creating &&
                                 <div>
@@ -162,8 +163,8 @@ class LoginCard extends Component {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content>
-                    <Button primary onClick={() => { this.props.setGlobal({ creating: !this.props.globalState.creating }) }}>{this.getButtonText()}</Button>
-                    <Button style={{ marginLeft: '20px',  }} primary>RESET PASSWORD</Button>
+                    <Button primary onClick={() => { this.props.setGlobal({ creating: !this.props.globalState.creating }) }} style={{marginLeft: '45px'}}>{this.getButtonText()}</Button>
+                    <Button style={{ marginLeft: '40px',  }} primary>RESET PASSWORD</Button>
                 </Card.Content>
             </Card>
         );
