@@ -13,6 +13,7 @@ import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
 import CustomPurchase from '../Components/Purchases/CustomPurchase';
+import { Advertisement } from 'semantic-ui-react'
 import Admin from './Admin';
 class Main extends Component {
 
@@ -173,7 +174,7 @@ class Main extends Component {
               </Accordion.Content>
             </Accordion>
             <Image src='./HomePicture1.jpg' size='massive' floated = 'left' />
-            <RewardsAd goToPage={this.goToPage} />
+           <RewardsAd goToPage={this.goToPage} />
             <h4>Community Stories</h4>
             <VideoGroup videos={this.state.videos} />
           </div>

@@ -15,9 +15,10 @@ class RewardsAd extends Component {
 
       <div>
       <div>
-        <t>
-          Go to the rewards tab to learn more about our incentives program and to have a chance to earn one of these prizes
-        </t>
+        <h4>
+          Go to the rewards tab to learn more about our incentives program and to have a chance to 
+                        earn one of these prizes
+        </h4>
       </div>
       <div>
         <Card.Group>
