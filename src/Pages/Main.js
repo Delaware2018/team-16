@@ -160,7 +160,7 @@ class Main extends Component {
           </div>
         }
 
-        { this.state.currentPage === 'Admin' &&
+        { this.state.currentPage === 'Admin' && this.props.globalState.user.admin &&
           <div>
             <Admin />
           </div>

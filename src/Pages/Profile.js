@@ -88,7 +88,7 @@ class Profile extends Component {
   makeAdmin = () => {
     var user = this.props.globalState.user;
 
-    this.user.admin = true;
+    user.admin = true;
 
     var userJSON = JSON.stringify(user);
 
@@ -172,7 +172,6 @@ class Profile extends Component {
           </table>
           <Button onClick={this.save} color='green'>Save</Button>
           <Button onClick={this.makeAdmin}>Make Current User Admin</Button>
-          <Image src='./qrCode.png' size='medium' floated = 'right' />
           </div>
       </div>
     )
