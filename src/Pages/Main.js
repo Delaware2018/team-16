@@ -204,7 +204,7 @@ class Main extends Component {
 
         { this.state.currentPage === 'Admin' && this.props.globalState.user.admin &&
           <div>
-            <Admin />
+            <Admin setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
           </div>
         }
       
