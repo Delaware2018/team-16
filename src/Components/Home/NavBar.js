@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
-class Home extends Component {
+class NavBar extends Component {
     constructor(props){
       super(props);
 
@@ -57,4 +57,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default NavBar;

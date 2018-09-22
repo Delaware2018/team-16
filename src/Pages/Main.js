@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import LoginCard from '../Components/Login/LoginCard';
 import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
-import GlobalProvider, { GlobalConsumer } from '../APIs/Global.context';
-import Home from '../Components/Home/Home';
+import NavBar from '../Components/Home/NavBar';
 class Main extends Component {
 
   constructor(props) {
@@ -61,7 +60,7 @@ class Main extends Component {
           </div>
         }
 
-        <Home loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
+        <NavBar loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
 
       </div>
     )

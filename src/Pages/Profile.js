@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
-class RewardsAd extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
 
@@ -13,10 +13,10 @@ class RewardsAd extends Component {
   render() {
     return (
       <div>
-        
+      
       </div>
     )
   }
 }
 
-export default RewardsAd;
+export default Profile;
