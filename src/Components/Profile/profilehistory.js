@@ -55,13 +55,13 @@ class ProfileHistory extends Component {
       donationHistory.push(
         <Table.Row key={index}>
           <Table.Cell>
-            {temp.date}
+            {donation.date}
           </Table.Cell>
           <Table.Cell>
-            {temp.name}
+            {donation.name}
           </Table.Cell>
           <Table.Cell>
-            {temp.amount}
+            {donation.amount}
           </Table.Cell>
         </Table.Row>
       )

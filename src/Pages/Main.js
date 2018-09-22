@@ -56,7 +56,16 @@ class Main extends Component {
     })
   }
 
+  buttonAway = () => {
+    document.getElementById("one").style.visibility = "hidden"
+  
+    this.setState({ 
+      showMenu: !this.state.showMenu,
+     })
+  }
+
   goToPage = (page) => {
+    document.getElementById("one").style.visibility = "visible"
     this.setState({
       currentPage: page,
       showMenu: !this.state.showMenu
@@ -90,7 +99,7 @@ class Main extends Component {
         {this.state.loggedIn && <div>
           
         </div>}
-        <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
+        <Button onClick={ this.buttonAway } id="one">Toggle Menu</Button>
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
         {this.state.currentPage === 'Home' &&
