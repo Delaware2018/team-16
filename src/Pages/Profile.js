@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, GridColumn } from 'semantic-ui-react';
 import * as firebase from 'firebase';
-import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { Grid, Image, Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import { Card } from 'semantic-ui-react'
 import { Input } from 'semantic-ui-react'
 
@@ -12,7 +12,7 @@ class Profile extends Component {
   }
 
 
-  updateEmailValue (evt) {
+  updateEmailValue = (evt) => {
     var user = this.props.globalState.user;
     user.email = evt.target.value;
     this.props.setGlobal({
@@ -20,7 +20,7 @@ class Profile extends Component {
     });
   }
 
-  updateFSValue (evt) {
+  updateFSValue = (evt) => {
     var user = this.props.globalState.user;
     user.familySize = evt.target.value;
     this.props.setGlobal({
@@ -28,7 +28,7 @@ class Profile extends Component {
     });
   }
 
-  updateIncomeValue (evt) {
+  updateIncomeValue = (evt) => {
     var user = this.props.globalState.user;
     user.income = evt.target.value;
     this.props.setGlobal({
@@ -36,7 +36,7 @@ class Profile extends Component {
     });
   }
 
-  updatePetsValue (evt) {
+  updatePetsValue = (evt) => {
     var user = this.props.globalState.user;
     user.pets = evt.target.value;
     this.props.setGlobal({
@@ -44,7 +44,7 @@ class Profile extends Component {
     });
   }
 
-  updateGenderValue (evt) {
+  updateGenderValue = (evt) => {
     var user = this.props.globalState.user;
     user.gender = evt.target.value;
     this.props.setGlobal({
@@ -52,7 +52,7 @@ class Profile extends Component {
     });
   }
 
-  updateAgeValue (evt) {
+  updateAgeValue = (evt) => {
     var user = this.props.globalState.user;
     user.age = evt.target.value;
     this.props.setGlobal({
@@ -60,7 +60,7 @@ class Profile extends Component {
     });
   }
 
-  updateLocationValue (evt) {
+  updateLocationValue = (evt) => {
     var user = this.props.globalState.user;
     user.location = evt.target.value;
     this.props.setGlobal({
@@ -71,9 +71,10 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <Card>
-          <Card.Header>{this.props.globalState.user.name}</Card.Header>
-          <Card.Description>
+
+          <Image src='./matthew.png' />
+        
+          {this.props.globalState.user.name}
             <span>
               Email: <Input placeholder={this.props.globalState.user.email} onChange={this.updateEmailValue}/>
             </span>
@@ -102,8 +103,7 @@ class Profile extends Component {
               Location: <Input placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/>
             </span>
             <br/>
-          </Card.Description>
-        </Card>
+          
       </div>
     )
   }
