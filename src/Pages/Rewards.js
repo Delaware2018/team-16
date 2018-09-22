@@ -16,7 +16,7 @@ class Rewards extends Component {
         <Card.Group>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./goodwillGiftcard.png' size='small' />
+              <Image centered src='./goodwillGiftcard.png' size='medium' />
               <Card.Description textAlign='center'>
                 Goodwill Giftcard
               </Card.Description>
@@ -24,15 +24,15 @@ class Rewards extends Component {
           </Card>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./chaseGiftcard.png' size='small' />
+              <Image centered src='./visaGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
-                Chase Visa Giftcard
+                Visa Giftcard
               </Card.Description>
             </Card.Content>
           </Card>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./paypalGiftcard.jpg' size='small' />
+              <Image centered src='./paypalGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
                 Paypal Giftcard
               </Card.Description>
@@ -40,7 +40,7 @@ class Rewards extends Component {
           </Card>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./amazonGiftcard.jpg' size='small' />
+              <Image centered src='./amazonGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
                 Amazon Giftcard
               </Card.Description>
@@ -48,7 +48,7 @@ class Rewards extends Component {
           </Card>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./ebayGiftcard.jpg' size='small' />
+              <Image centered src='./ebayGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
                 Ebay Giftcard
               </Card.Description>
@@ -56,7 +56,7 @@ class Rewards extends Component {
           </Card>
           <Card raised onClick={() => { }}>
             <Card.Content centered>
-              <Image centered src='./walmartGiftcard.jpg' size='small' />
+              <Image centered src='./walmartGiftcard.jpg' size='medium' />
               <Card.Description textAlign='center'>
                 Walmart Giftcard
               </Card.Description>
