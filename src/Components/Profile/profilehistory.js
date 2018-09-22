@@ -63,18 +63,6 @@ class ProfileHistory extends Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {this.state.donationHistory}
-          </Table.Body>
-        </Table>
-        <Table celled striped>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Date</Table.HeaderCell>
-              <Table.HeaderCell>Item Name</Table.HeaderCell>
-              <Table.HeaderCell>Amount</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
             {this.state.purchaseHistory}
           </Table.Body>
         </Table>
