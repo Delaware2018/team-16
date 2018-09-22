@@ -8,6 +8,7 @@ import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
 import ProfileHistory from '../Components/Profile/ProfileHistory';
+import DonationMeter from '../Components/Donation/DonationMeter';
 class Main extends Component {
 
   constructor(props) {
@@ -85,6 +86,7 @@ class Main extends Component {
           <div>
             <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
+            <DonationMeter />
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
           </div>
