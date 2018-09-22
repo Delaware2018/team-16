@@ -73,10 +73,10 @@ class Profile extends Component {
       <div>
 
           <Image src='./matthew.png' size='medium' floated = 'left' circular />
-        
+        <div>
           {this.props.globalState.user.name}
-            <span>
-              Email: <Input placeholder={this.props.globalState.user.email} onChange={this.updateEmailValue}/>
+            {/* <span>
+              Email: <Input style={{ marginLeft: '35px',  }} placeholder='@' onChange={this.updateEmailValue}/>
             </span>
             <br/>
              <span>
@@ -84,26 +84,56 @@ class Profile extends Component {
             </span>
             <br/>
             <span>
-              Income: <Input placeholder={this.props.globalState.user.income} onChange={this.updateIncomeValue}/>
+              Income: <Input style={{ marginLeft: '23px',  }} placeholder={this.props.globalState.user.income} onChange={this.updateIncomeValue}/>
             </span>
             <br/>
             <span>
-              Pets: <Input placeholder={this.props.globalState.user.pets} onChange={this.updatePetsValue}/>
+              Pets: <Input style={{ marginLeft: '41px',  }} placeholder={this.props.globalState.user.pets} onChange={this.updatePetsValue}/>
             </span>
             <br/>
             <span>
-              Gender: <Input placeholder={this.props.globalState.user.gender} onChange={this.updateGenderValue}/>
+              Gender: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.gender} onChange={this.updateGenderValue}/>
             </span>
             <br/>
             <span>
-              Age: <Input placeholder={this.props.globalState.user.age} onChange={this.updateAgeValue}/>
+              Age: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.age} onChange={this.updateAgeValue}/>
             </span>
             <br/>
             <span>
-              Location: <Input placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/>
+              Location: <Input style={{ marginLeft: '40px',  }} placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/>
             </span>
-            <br/>
-          
+            <br/> */}
+            <table style = {{width: '25%'}}>
+            <tr>
+              <th>Email:</th>
+                <td><Input placeholder={this.props.globalState.user.familySize} onChange={this.updateFSValue}/></td>
+            </tr>
+            <tr>
+              <th>Family Size:</th>
+              <td><Input placeholder={this.props.globalState.user.familySize} onChange={this.updateFSValue}/></td>
+            </tr>
+            <tr>
+              <th>Income:</th>
+              <td><Input placeholder={this.props.globalState.user.income} onChange={this.updateIncomeValue}/></td>
+            </tr>
+            <tr>
+              <th>Pets:</th>
+              <td><Input placeholder={this.props.globalState.user.pets} onChange={this.updatePetsValue}/></td>
+            </tr>
+            <tr>
+              <th>Gender:</th>
+              <td><Input placeholder={this.props.globalState.user.gender} onChange={this.updateGenderValue}/></td>
+            </tr>
+            <tr>
+              <th>Age:</th>
+              <td><Input placeholder={this.props.globalState.user.age} onChange={this.updateAgeValue}/></td>
+            </tr>
+            <tr>
+              <th>Location:</th>
+              <td><Input placeholder={this.props.globalState.user.location} onChange={this.updateLocationValue}/></td>
+            </tr>   
+          </table>
+          </div>
       </div>
     )
   }
