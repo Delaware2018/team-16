@@ -7,6 +7,10 @@ export default class GlobalProvider extends Component{
     super(props);
 
     this.setGlobal = this.setGlobal.bind(this);
+
+    this.state = {
+      loggedIn: false
+    }
   }
 
   setGlobal(item){
@@ -19,6 +23,8 @@ export default class GlobalProvider extends Component{
     return (
       <GlobalContext.Provider
         value = {{
+          setGlobal: this.setGlobal,
+          globalState: this.state
         }}
       >
         {children}

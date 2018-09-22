@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./App.css";
 
+import Main from './Pages/Main';
+
 // Context / Global State
 import GlobalProvider, { GlobalConsumer } from './APIs/Global.context.js';
 
@@ -17,9 +19,8 @@ class App extends Component {
       <GlobalProvider>
         <GlobalConsumer>
           {({ globalState, setGlobal }) =>
-            <div>
-              Test
-            </div>
+            <Main globalState={globalState}
+              setGlobal={setGlobal} />
           }
         </GlobalConsumer>
       </GlobalProvider>
