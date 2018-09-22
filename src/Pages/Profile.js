@@ -90,7 +90,7 @@ class Profile extends Component {
       <div>
 
           <Image src='./matthew.png' size='medium' floated = 'left' circular />
-          <Image src='./qrCode.png' size='medium' floated = 'right' />
+          <Image src='./qrCode.png' size='medium' floated = 'right' style = {{marginRight: '560px'}} />
         <div>
           {this.props.globalState.user.name}
             {/* <span>
