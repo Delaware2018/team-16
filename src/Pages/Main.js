@@ -7,7 +7,7 @@ import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
-import ProfileHistory from '../Components/Profile/profilehistory';
+import ProfileHistory from '../Components/Profile/ProfileHistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 class Main extends Component {
@@ -129,7 +129,6 @@ class Main extends Component {
               Your donations and shopping makes a positive impact on the environment too.  
               This practice offers the community an environmentally healthy alternative for the disposal of unwanted, 
               but still usable items.</h1>
-            <DonationMeter globalState={this.props.globalState} />
             <RewardsAd goToPage={this.goToPage} />
             <VideoGroup videos={this.state.videos} />
           </div>
