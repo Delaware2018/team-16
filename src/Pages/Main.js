@@ -36,6 +36,23 @@ class Main extends Component {
           })
         });
 
+        storageRef.child('listOfUsers.json').getDownloadURL().then((url) => {
+          $.getJSON(url, (data) => {
+            if(!data.users.includes(user.email)){
+              data.users.push(user.email)
+            }
+
+            var dataJSON = JSON.stringify(data);
+
+            var storageRef = firebase.storage().ref().child('listOfUsers.json');
+            var dataBlob = new Blob([dataJSON], { type: 'application/json' });
+
+            storageRef.put(dataBlob).then((snapshot) => {
+              console.log("Updated User List");
+            })
+          })
+        })
+
         this.props.setGlobal({
           username: username
         })
