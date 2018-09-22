@@ -22,8 +22,8 @@ class NavBar extends Component {
                     inverted
                     onHide={this.handleSidebarHide}
                     vertical
-                    visible={this.props.loggedIn}
-                     width='thin'
+                    visible={this.props.showMenu}
+                     width='very thin'
                 >
                 <Menu.Item as='a'>
                     <Icon name='home' />

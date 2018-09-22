@@ -3,6 +3,7 @@ import LoginCard from '../Components/Login/LoginCard';
 import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
+import RewardsAd from '../Components/Home/RewardsAd';
 class Main extends Component {
 
   constructor(props) {
@@ -22,7 +23,8 @@ class Main extends Component {
     })
 
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      showMenu: false
     }
   }
 
@@ -60,10 +62,11 @@ class Main extends Component {
           </div>
         }
 
-        <div ref={(div) => { this.vizContainer = div }}>
-        </div>  
+        <Button onClick={() => {this.setState({showMenu: !this.state.showMenu})}}>Toggle Menu</Button>
 
-        <NavBar loggedIn={this.state.loggedIn} globalState={this.props.globalState} />
+        <RewardsAd />
+        
+        <NavBar showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
       </div>
     )
