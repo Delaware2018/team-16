@@ -4,6 +4,7 @@ import { Modal, Button, Transition } from 'semantic-ui-react';
 import * as firebase from 'firebase';
 import NavBar from '../Components/Home/NavBar';
 import RewardsAd from '../Components/Home/RewardsAd';
+import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile'
 class Main extends Component {
 
@@ -23,9 +24,13 @@ class Main extends Component {
       }
     })
 
+    // Instantiate Videos here
+    var videos = [];
+
     this.state = {
       loggedIn: false,
-      showMenu: false
+      currentPage: 'Home',
+      videos: videos
     }
   }
 
@@ -36,6 +41,12 @@ class Main extends Component {
 
     this.setState({
       loggedIn: false
+    })
+  }
+
+  goToPage = (page) => {
+    this.setState({
+      currentPage: page
     })
   }
 
@@ -63,13 +74,34 @@ class Main extends Component {
           </div>
         }
 
-        <Button onClick={() => {this.setState({showMenu: !this.state.showMenu})}}>Toggle Menu</Button>
+        <Button onClick={() => { this.setState({ showMenu: !this.state.showMenu }) }}>Toggle Menu</Button>
+        <NavBar goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
-        <RewardsAd />
-        
-        <NavBar showMenu={this.state.showMenu} globalState={this.props.globalState} />
+        { this.state.currentPage === 'Home' &&
+          <div>
+            <h1>Mission Statement Goes here with Better Formating</h1>
+            <RewardsAd goToPage={this.goToPage} />
+            <VideoGroup videos={this.state.videos} />
+          </div>
+        }
 
-        <Profile globalState={this.props.globalState}/>
+        { this.state.currentPage === 'Donation' &&
+          <div>
+            
+          </div>
+        }
+
+        { this.state.currentPage === 'Profile' &&
+          <div>
+            <Profile globalState={this.props.globalState} />
+          </div>
+        }
+
+        { this.state.currentPage === 'Rewards' &&
+          <div>
+
+          </div>
+        }
 
       </div>
     )
