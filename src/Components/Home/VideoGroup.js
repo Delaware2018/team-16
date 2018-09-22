@@ -8,35 +8,20 @@ class VideoGroup extends Component {
     super(props);
 
     // Add constructor
+
+    props.videos.forEach((video) => {
+      
+    })
+
+    this.state = {
+      videoCards: []
+    }
   }
 
   render() {
     return (
       <div>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
-          <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
-            <Card.Description textAlign='center'>
-              This is the Description
-            </Card.Description>
-          </Card.Content>
-        </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
-          <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
-            <Card.Description textAlign='center'>
-              This is the Description
-            </Card.Description>
-          </Card.Content>
-        </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
-          <Card.Content centered>
-            <Image centered src='./goodwillLogo.png' size='small' />
-            <Card.Description textAlign='center'>
-              This is the Description
-            </Card.Description>
-          </Card.Content>
-        </Card>
+        {this.state.videoCards}
       </div>
     )
   }

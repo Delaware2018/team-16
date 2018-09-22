@@ -93,7 +93,7 @@ class Main extends Component {
 
         { this.state.currentPage === 'Profile' &&
           <div>
-
+            <Profile globalState={this.props.globalState} />
           </div>
         }
 
@@ -102,8 +102,6 @@ class Main extends Component {
 
           </div>
         }
-
-        <Profile globalState={this.props.globalState}/>
 
       </div>
     )
