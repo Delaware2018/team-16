@@ -74,18 +74,18 @@ class Admin extends Component {
     if(this.state.numUsers === i){
       var mainStats = [];
 
-      // Ages 20 - 25
-      var cat1 = { numAge: 3, age: '18 and under', gender: 20, genderType: 'Male', family: 9, familySize: '1', income: 3, incomeAmount: "0-30000", marital: 20, maritalStatus: 'Single', locations: 2, location: "Delaware", pets: 6, numPets: '0', purchases: 3, numPurchases: '0', donations: 6, numDonations: '0' };
-      // Ages 25 - 30
-      var cat2 = { numAge: 6, age: '19-30', gender: 24, genderType: 'Female', family: 14, familySize: '2', income: 10, incomeAmount: "30001-70000", marital: 0, maritalStatus: 'Single', locations: 10, location: "Virginia", pets: 6, numPets: '0', purchases: 3, numPurchases: '0', donations: 6, numDonations: '0' };
-      // Ages 30 - 35
-      var cat3 = { ageNumber: 4, age: '25-30', gender: 7, genderType: 'Female', family: 2, familySize: '3', income: 7 , incomeAmount: "71000-99000", marital: 30, maritalStatus: 'Married', locations: 8, location: "Maryland", pets: 4, numPets: '2', purchases: 5, numPurchases: '2', donations: 3, numDonations: '1'};
-      // Ages 35 - 40
-      var cat4 = { ageNumber: 4, age: '40-45', gender: 10, genderType: 'Male', family: 9, familySize: '4', income: 7 , incomeAmount: "0-60000", marital: 10, maritalStatus: 'Married', locations: 3, location: "Maryland", pets: 4, numPets: '1', purchases: 10, numPurchases: '6', donations: 3, numDonations: '5' };
-      // Ages 40 - 45
-      var cat5 = { age: 1, gender: 0, family: 3, familySize: '5', income: 4 };
+      // Ages 18 and under
+      var cat1 = { numAge: 3, age: '18 and under', numGender: 4, gender: 'Male', family: 9, familySize: '1', numIncome: 3, income: 'Under 30000', marital: 20, maritalStatus: 'Single', locations: 5, location: 'Delaware', pets: 6, numPets: '0', purchases: 3, numPurchases: '0', donations: 6, numDonations: '0' };
+      // Ages 19 - 29
+      var cat2 = { age: '19 to 29', numAge: 6, family: 6, familySize: '2', income: '45000-60000', numIncome: 5 };
+      // Ages 30 - 39
+      var cat3 = { age: '30 to 39', gender: 'Female', family: 2, familySize: '3', income: '2', purchases: 5, numPurchases: '2', donations: 3, numDonations: '1'};
+      // Ages 40 - 49
+      var cat4 = { numAge: 8, age: '40-49', numGender: 8, family: 3, familySize: '5', numIncome: 3, income: '30000-45000', marital: 5, maritalStatus: 'Married', locations: 5, location:"Maryland", pets: 3, numPets: '2', purchases: 5, numPurchases: '1', donations: 6, numDonations: '2' };
+      // Ages 50 - 59
+      var cat5 = { age: '50 to 59', gender: 0, family: 3, familySize: '5', numIncome: 8, income: 4, marital: 6, maritalStatus: 'Single', locations: 3, location:"DE", pets: 1, numPets: '4', purchases: 7, numPurchases: '5', donations: 9, numDonations: '9'};
       // Other
-      var cat6 = { age: 4, gender: 0, family: 1, familySize: '6', income: 6 };
+      var cat6 = { numAge: 1, age: '60 and over', gender: 5, family: 1, familySize: '6', numIncome:'Over 60000', income: 6, purchases: 8, numPurchases: '3', numDonations: '5' };
 
       this.state.stats.ages.forEach((age) => {
         if(age >= 20 && age < 25){
@@ -158,13 +158,22 @@ class Admin extends Component {
                 <h3>Family Size: {this.state.value.familySize}</h3>
                 <h3>Number with this Family Size: {this.state.value[this.state.selected]}</h3>
               </div>
-            }
-            {this.state.selected === 'gender' &&
+            }{ this.state.selected === 'gender' && 
               <div>
-                <h3>Gender type: {this.state.value.genderType}</h3>
+                <h3>Gender Type: {this.state.value.gender}</h3>
                 <h3>Number with this Gender: {this.state.value[this.state.selected]}</h3>
               </div>
-            }
+            }{ this.state.selected === '' && 
+              <div>
+                <h3>Marital Status: {this.state.value.maritalStatus}</h3>
+                <h3>Number with this Family Size: {this.state.value[this.state.selected]}</h3>
+              </div>
+            }{ this.state.selected === 'age' && 
+            <div>
+              <h3>Income: {this.state.value.income}</h3>
+              <h3>Number with this Marital Status: {this.state.value[this.state.selected]}</h3>
+            </div>
+          }
             
           </Card.Content>
         </Card>
