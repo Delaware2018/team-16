@@ -29,13 +29,15 @@
         width: '250px',
       };
       const circleContainerStyle = {
+        position: 'relative',
+        left: '225px',
         width: '250px',
         height: '250px',
         display: 'inline-block',
       };
       return (
         <div>
-          <h3>Progress towards next reward: {40}%</h3>
+          <h3 style={{ position: 'relative', left: '215px'}}>Progress towards next reward: {40}%</h3>
           <div style={circleContainerStyle}>
             <Circle
               percent={this.state.percent}
@@ -46,12 +48,12 @@
           </div>
         <div>
         <div>
-        <p>
+        <p style={{ position: 'relative', left: '233px',  fontSize: '18px'}}>
           Total Accumulated points: 40
         </p>
       </div>
         <div>
-          <Card.Group>
+          <Card.Group style={{width:'800px', float:'right', marginTop:"-325px"}}>
             <Card raised onClick={() => { }}>
               <Card.Content centered>
                 <Image centered src='./goodwillGiftcard.png' size='medium' />
