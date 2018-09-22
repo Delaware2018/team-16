@@ -44,7 +44,12 @@
               strokeColor={this.state.color}
             />
           </div>
-          <div>
+        <div>
+        <div>
+        <p>
+          Total Accumulated points: 40
+        </p>
+      </div>
         <div>
           <Card.Group>
             <Card raised onClick={() => { }}>
@@ -97,10 +102,8 @@
             </Card>
           </Card.Group>
         </div>
-        
       </div>
-        </div>
-      
+    </div>    
     );
   }
 }
