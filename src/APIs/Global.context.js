@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // Firebase / Database Tools
 import * as firebase from 'firebase';
 
+import User from '../Data/User';
+
 const GlobalContext = React.createContext();
 
 export default class GlobalProvider extends Component{
@@ -22,11 +24,14 @@ export default class GlobalProvider extends Component{
     };
     firebase.initializeApp(config);
 
+    var user = new User();
+
     this.state = {
       loggedIn: false,
       creating: false,
       username: '',
-      admin: false
+      admin: false,
+      user: user
     }
   }
 
