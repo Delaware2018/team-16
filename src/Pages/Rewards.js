@@ -13,7 +13,7 @@ class Rewards extends Component {
   render() {
     return (
       <div>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./goodwillGiftcard.png' size='small' />
             <Card.Description textAlign='center'>
@@ -21,7 +21,7 @@ class Rewards extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./chaseGiftcard.png' size='small' />
             <Card.Description textAlign='center'>
@@ -29,7 +29,7 @@ class Rewards extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./paypalGiftcard.jpg' size='small' />
             <Card.Description textAlign='center'>
@@ -37,7 +37,7 @@ class Rewards extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./amazonGiftcard.jpg' size='small' />
             <Card.Description textAlign='center'>
@@ -45,7 +45,7 @@ class Rewards extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./ebayGiftcard.jpg' size='small' />
             <Card.Description textAlign='center'>
@@ -53,7 +53,7 @@ class Rewards extends Component {
             </Card.Description>
           </Card.Content>
         </Card>
-        <Card raised onClick={() => { this.props.goToPage('Rewards') }}>
+        <Card raised onClick={() => { }}>
           <Card.Content centered>
             <Image centered src='./walmartGiftcard.jpg' size='small' />
             <Card.Description textAlign='center'>
