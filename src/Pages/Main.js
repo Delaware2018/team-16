@@ -123,10 +123,6 @@ class Main extends Component {
           <div>
             <h1>Goodwill Dashboard</h1>
             <h1>Mission Statement Goes here with Better Formating</h1>
-            <DonationMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
-            <CustomDonation setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
-            <PurchaseMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
-            <CustomPurchase setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
             <h1>DONATE. SHOP. CREATE JOBS.
               When you donate to Goodwill, your unwanted items are sold in our retail stores and online. With the money raised from 
               these sales, Goodwill can help people overcome barriers to self-sufficiency, through the Power of Work. You donate and shop, 

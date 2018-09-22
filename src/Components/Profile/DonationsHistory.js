@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar, Card, Table, Button } from 'semantic-ui-react'
+import CustomDonation from '../Donation/CustomDonation';
+import DonationMeter from '../Donation/DonationMeter';
 
 class DonationsHistory extends Component {
   constructor(props) {
@@ -54,6 +56,8 @@ class DonationsHistory extends Component {
   render() {
     return (
       <div>
+         <DonationMeter setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
+            <CustomDonation setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
         <Table celled striped>
           <Table.Header>
             <Table.Row>
