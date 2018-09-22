@@ -7,7 +7,7 @@ import RewardsAd from '../Components/Home/RewardsAd';
 import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
-import ProfileHistory from '../Components/Profile/ProfileHistory';
+import ProfileHistory from '../Components/Profile/profilehistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 class Main extends Component {
