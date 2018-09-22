@@ -7,9 +7,6 @@ import Main from './Pages/Main';
 import GlobalProvider, { GlobalConsumer } from './APIs/Global.context.js';
 
 class App extends Component {
-
-  loggedIn = false;
-
   constructor(props){
     super()
   }
