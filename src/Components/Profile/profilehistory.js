@@ -13,6 +13,7 @@ class ProfileHistory extends Component {
     // Get Donation History from firebase
 
     var temp = {}
+    var history = [];
 
     // How to get todays date
     var today = new Date();
@@ -36,20 +37,18 @@ class ProfileHistory extends Component {
     temp.date = '04/19/2018';
     temp.name = 'Lamp';
     temp.amount = '$15'
-
+    history.push(temp);
     temp.date = '07/04/2017';
     temp.name = 'Soccer Ball';
     temp.amount = '$5'
-
+    history.push(temp);
     temp.date = '01/30/2015';
     temp.name = 'Mens T-Shirt';
     temp.amount = '$8'
-
+    history.push(temp);
     temp.date = '11/25/2012';
     temp.name = 'Jump Rope';
     temp.amount = '$3'
-
-    var history = []
     history.push(temp);
 
     history.forEach((donation, index) => {
