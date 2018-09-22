@@ -120,7 +120,7 @@ class Main extends Component {
         <NavBar logout={this.logout} goToPage={this.goToPage} showMenu={this.state.showMenu} globalState={this.props.globalState} />
 
       <div>
-        <Advertisement unit ='banner' test='Enter personal info here to redeem rewards' />
+        <Advertisement unit='banner' test='Enter personal info here to redeem rewards' />
       </div>
         {this.state.currentPage === 'Home' &&
           <div>
