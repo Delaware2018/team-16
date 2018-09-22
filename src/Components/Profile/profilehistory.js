@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import * as firebase from 'firebase';
 import { Header, Icon, Image, Menu, Segment, Sidebar, Card, Table, Button } from 'semantic-ui-react'
 
@@ -7,6 +7,55 @@ class ProfileHistory extends Component {
     super(props);
 
     // Add constructor
+
+    var donationHistory = []
+
+    // Get Donation History from firebase
+
+    var temp = {}
+
+    // How to get todays date
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    // Copy here (You'll need to make a new temp variable for each one or overwrite it)
+    temp.date = dd + '/' + mm + '/' + yyyy;
+    temp.name = 'Baseball Bat';
+    temp.amount = '$10'
+    // End here
+
+    var history = []
+    history.push(temp);
+
+    history.forEach((donation) => {
+      donationHistory.push(
+        <Table.Row>
+          <Table.Cell>
+            {temp.date}
+          </Table.Cell>
+          <Table.Cell>
+            {temp.name}
+          </Table.Cell>
+          <Table.Cell>
+            {temp.amount}
+          </Table.Cell>
+        </Table.Row>
+      )
+    })
+
+    this.state = {
+      donationHistory: donationHistory,
+      history: history
+    }
   }
 
   render() {
@@ -15,48 +64,13 @@ class ProfileHistory extends Component {
         <Table celled striped>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell colSpan='3'>Donation History</Table.HeaderCell>
+              <Table.HeaderCell>Date</Table.HeaderCell>
+              <Table.HeaderCell>Item Name</Table.HeaderCell>
+              <Table.HeaderCell>Amount</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-
           <Table.Body>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Icon name='' /> 5/5/2016
-        </Table.Cell>
-              <Table.Cell>$50</Table.Cell>
-              <Table.Cell collapsing textAlign='right'>
-                2 years ago
-        </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <Icon name='' /> 9/10/2016
-        </Table.Cell>
-              <Table.Cell>$60</Table.Cell>
-              <Table.Cell textAlign='right'>2 years ago</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <Icon name='' /> 9/10/2017
-        </Table.Cell>
-              <Table.Cell>$60</Table.Cell>
-              <Table.Cell textAlign='right'>1 year ago</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <Icon name='' /> 12/20/2017
-        </Table.Cell>
-              <Table.Cell>$75</Table.Cell>
-              <Table.Cell textAlign='right'>1 year ago</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <Icon name='' /> 6/12/2018
-        </Table.Cell>
-              <Table.Cell>$90</Table.Cell>
-              <Table.Cell textAlign='right'>3 months ago</Table.Cell>
-            </Table.Row>
+            {this.state.donationHistory}
           </Table.Body>
         </Table>
       </div>
