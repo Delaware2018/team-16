@@ -8,6 +8,7 @@ import VideoGroup from '../Components/Home/VideoGroup';
 import Profile from '../Pages/Profile';
 import Rewards from '../Pages/Rewards';
 import ProfileHistory from '../Components/Profile/profilehistory';
+import DonationsHistory from '../Components/Profile/DonationsHistory';
 import DonationMeter from '../Components/Donation/DonationMeter';
 import $ from 'jquery';
 import CustomDonation from '../Components/Donation/CustomDonation';
@@ -150,13 +151,17 @@ class Main extends Component {
           <div>
             <Menu>
               <Menu.Item onClick={() => {this.setState({currentProf: 'Info'})}}>Info</Menu.Item>
-              <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>History</Menu.Item>
+              <Menu.Item onClick={() => { this.setState({ currentProf: 'History' }) }}>Purchases</Menu.Item>
+              <Menu.Item onClick={() => { this.setState({ currentProf: 'Donations' }) }}>Donations</Menu.Item>
             </Menu>
             { this.state.currentProf === 'Info' &&
               <Profile globalState={this.props.globalState} setGlobal={this.props.setGlobal}/>
             }
             { this.state.currentProf === 'History' &&
               <ProfileHistory globalState={this.props.globalState} />
+            }
+            { this.state.currentProf === 'Donations' &&
+              <DonationsHistory setGlobal={this.props.setGlobal} globalState={this.props.globalState} />
             }
             
           </div>
